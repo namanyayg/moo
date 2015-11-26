@@ -1,0 +1,14 @@
+body {
+  font-family: 'Segoe UI Light';
+  color: #353535;
+  line-height: 1.5;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  max-width: 60em;
+  width: 95%;
+  margin: 0 auto;
+}
