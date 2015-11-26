@@ -217,6 +217,6 @@ console.log('---');
 console.log();*/
 
 // playSingle([0, 2, 6], true)
-checkAll()
+// checkAll()
 
 // console.log(findUniqueGuess([243, 342, 432, 425, 142, 153]));
