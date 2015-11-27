@@ -2,19 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Moo | Bulls and Cows</title>
+  <title>Moo · Bulls and Cows</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
   <div class="wrap">
+    <h1 class="title">MOO &middot; Bulls and Cows</h1>
+    <div class="options main-menu">
+      <div class="button guess-computer">Computer Guesses</div>
+      <div class="button guess-you">You Guess</div>
+    </div>
+
+    <div class="guesser guesses-computer">
+      <h1>Enter a number for the computer to guess</h1>
+
+      <form class="computer-guess-number">
+        <input type="text">
+        <button>Submit</button>
+      </form>
+
+      <div class="result">
+        <h2>Here's what the computer did:</h2>
+        <div class="result guesses-computer__result"></div>
+      </div>
+    </div>
+    <div class="guesser guesses-you">
+      <p>The computer has initialized a random number for you to guess. Go ahead and enter guesses.</p>
+      
+      <form class="you-guess-number">
+        <input type="text">
+        <button>Submit</button><br>
+        <label>
+          <input type="checkbox" class="you-show-pruned-set">
+          <span>Show pruned sets?</span>
+        </label>
+      </form>
+
     
+      <div class="result guess-you__result">
+      </div>
+    </div>
   </div>
 
   <footer class="colophon">
-    <a href="http://code-warriors.org/research/mathematical-bulls-and-cows.pdf">Associated Research Paper</a> &middot; <a href="https://github.com/namanyayg/moo">GitHub</a>
+    <div class="wrap">
+      Made with love by Namanyay Goel
+      <br>
+      <a href="http://code-warriors.org/research/mathematical-bulls-and-cows.pdf">Associated Research Paper</a> &middot; <a href="https://github.com/namanyayg/moo">GitHub</a> &middot; <a href="http://projects.namanyayg.com/gyan">Other projects</a>
+    </div>
   </footer>
-  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="index.js"></script>
+  <script src="events.js"></script>
 </body>
 </html>

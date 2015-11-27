@@ -102,9 +102,13 @@ function respondToNum(num, guess) {
   return response;
 }
 
-function pruneSet(set, guess, ans, debug) {
+function pruneSet(set, guess, ans, debug, display, $to) {
   var response = respondToNum(ans, guess);
   if ( debug ) console.log(response);
+  if ( display ) {
+    if ( ans.join('') != guess.join('') )
+      $to.append('<div class="bc">Bulls: ' + response.bulls + ' Cows: ' + response.cows + '</div>');
+  }
   var pruned = [];
   set.forEach(function(num, pos) {
     var numRes = respondToNum(num, guess)
@@ -170,7 +174,7 @@ function checkAll () {
   console.log(histogram);
 }
 
-function playSingle (ans, debug) {
+function playSingle (ans, debug, display, $to) {
   var set2 = allUniques.slice();
   var playedTimes = 0; // Computer repeats the last guess
   var guess;
@@ -178,18 +182,21 @@ function playSingle (ans, debug) {
   do {
     guess = makeGuess(set2);
     if ( guesses.indexOf(guess.join('')) !== -1 ) {
-      console.log(true);
       guess = makeGuess(set2, true);
     }
     guesses.push(guess.join(''));
     if ( debug ) console.log('guess - ', guess.join(''));
-    set2 = pruneSet(set2, guess, ans, debug);
+    if ( display ) $to.append('<div class="guess">Guess: ' + guess.join('') + '</div>');
+
+    set2 = pruneSet(set2, guess, ans, debug, display, $to);
+
     if ( debug ) console.log('set - ', set2.join(' '));
     playedTimes++;
   } while ( ( set2.join('') !== guess.join('') && set2.length ) && playedTimes < 50 )
 
 
   console.log(playedTimes + ' guesses for ' + ans.join(''));
+  if ( display ) $to.append('<div class="turns">Got it in ' + playedTimes + ' guesses.')
   return playedTimes;
 }
 

@@ -1,5 +1,5 @@
-body {
-  font-family: 'Segoe UI Light';
+body, input, button {
+  font-family: 'Segoe UI';
   color: #353535;
   line-height: 1.5;
   font-size: 100%;
@@ -7,8 +7,109 @@ body {
   padding: 0;
 }
 
+body {
+  font-size: 125%;
+}
+
+body, html {
+  min-height: 100%;
+}
+
+input {
+  padding: 1em;
+  border-radius: 2px;
+  border: thin solid #ddd;
+}
+
+.title {
+  font-size: 3em;
+  font-family: 'Segoe UI Light', 'Helvetica';
+  font-weight: 300;
+  text-align: center;
+}
+
+.options {
+  margin-bottom: 6em;
+}
+
+.options .button {
+  padding: 1.5em;
+}
+
+.options .button + .button {
+  margin-top: 1.5em;
+}
+
+.guesser {
+  display: none;
+}
+
+form {
+  text-align: center;
+}
+
 .wrap {
   max-width: 60em;
   width: 95%;
   margin: 0 auto;
+}
+
+.button, button {
+  padding: 1em 2em;
+  cursor: pointer;
+  border: none;
+  background: mediumseagreen;
+  color: white;
+  text-align: center;
+  transition: all .2s ease;
+}
+
+.button:hover, button:hover {
+  transform: scale(1.05);
+}
+
+.button:active, button:active {
+  transform: scale(.95);
+  outline: none;
+}
+
+.button:focus, button:focus {
+  outline: none;
+}
+
+.colophon {
+  margin: 3em 0 0;
+  padding: 2em;
+  background: whitesmoke;
+  text-align: center;
+}
+
+a {
+  color: mediumseagreen;
+  text-decoration: none;
+}
+
+.result {
+  padding: 1em 0;
+}
+
+.result div {
+  padding: .5em 0;
+}
+
+.guesses-computer__result .bc {
+  margin-left: 1em;
+}
+
+.guesses-computer__result .guess {
+  padding-top: 1em;
+}
+
+.guesses-computer__result .turns {
+  font-weight: bold;
+}
+
+.result .pruned {
+  font-family: courier new, monospace;
+  font-size: .825em;
 }
